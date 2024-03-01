@@ -1,0 +1,25 @@
+name = "Potts_simulation"
+version = "0.1.0"
+license = "GPL-3.0"
+author = "osada-yum"
+maintainer = "osada.yum@gmail.com"
+copyright = "Copyright 2024, osada-yum"
+[build]
+auto-executables = true
+auto-tests = true
+auto-examples = true
+module-naming = false
+external-modules = ["mpi"]
+[install]
+library = false
+[fortran]
+implicit-typing = false
+implicit-external = false
+source-form = "free"
+[dependencies]
+numeric_simulation = { git = "https://github.com/osada-yum/Numerical_utilities.git" }
+
+[[executable]]
+name = "mpi_potts_relaxation"
+source-dir = "app"
+main = "mpi_potts_relaxation.f90"
